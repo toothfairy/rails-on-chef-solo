@@ -1,0 +1,47 @@
+SITE
+  remote: http://community.opscode.com/api/v1
+  specs:
+    bluepill (1.1.2)
+    build-essential (1.2.0)
+    hostname (0.0.3)
+    imagemagick (0.2.2)
+    locale (0.0.2)
+    mysql (1.3.0)
+      build-essential (>= 0.0.0)
+      openssl (>= 0.0.0)
+    nginx (1.0.2)
+      bluepill (>= 0.0.0)
+      build-essential (>= 0.0.0)
+      ohai (>= 1.1.0)
+      runit (>= 0.0.0)
+      yum (>= 0.0.0)
+    ohai (1.1.2)
+    openssl (1.0.0)
+    runit (0.15.0)
+    user (0.3.0)
+    yum (1.0.0)
+
+GIT
+  remote: https://github.com/macovsky/chef-rails
+  ref: master
+  sha: 5c022906204c431b11acccbfe74d943306c832d2
+  specs:
+    rails (0.1.0)
+
+GIT
+  remote: https://github.com/macovsky/chef-unicorn
+  ref: master
+  sha: 21a70ef52074d83769c065aec3d6ce1ca2a5c156
+  specs:
+    unicorn (0.2.0)
+
+DEPENDENCIES
+  hostname (>= 0)
+  imagemagick (>= 0)
+  locale (>= 0)
+  mysql (>= 0)
+  nginx (>= 0)
+  rails (>= 0)
+  unicorn (>= 0)
+  user (>= 0)
+
