@@ -1,7 +1,7 @@
 Коробка для подъёма [Rails](http://rubyonrails.org)-приложений на [Debian Squeeze](http://wiki.debian.org/DebianSqueeze) через [Chef Solo](http://wiki.opscode.com/display/chef/Chef+Solo):
 
 * Установка [hostname](http://community.opscode.com/cookbooks/hostname)
-* Установка дефолтной [locale](http://community.opscode.com/cookbooks/locale) в 
+* Установка дефолтной [locale](http://community.opscode.com/cookbooks/locale) `en_US.utf8` 
 * Создание [пользователей](https://github.com/fnichol/chef-user) приложений
 * Установка [NGINX](http://community.opscode.com/cookbooks/nginx) из сорцов и дефолтная настройка
 * Настройка [Rails](http://github.com/macovsky/chef-rails)-приложения: конфиг для NGINX и индивидуальный `/etc/init.d` скрипт для управления [Unicorn](http://unicorn.bogomips.org/)
