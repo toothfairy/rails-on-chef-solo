@@ -45,7 +45,6 @@ popd
 # Install Ruby 1.9.3-p194:
 rbenv install 1.9.3-p194
 rbenv global 1.9.3-p194
-rbenv rehash
 
 # Production installing gems skipping ri and rdoc
 cat << EOF > /root/.gemrc
