@@ -123,20 +123,7 @@ librarian-chef install
 
 **Запуск**
 
-```bash
-chef-solo
-```
-
-После этого остаётся только залогиниться пользователем приложения:
-
-* склонить приложение;
-* создать папки `mkdir -p log tmp/pids tmp/sockets`;
-* настроить `config/database.yml` и `config/unicorn.rb`;
-* запустить Unicorn `sudo /etc/init.d/unicorn-... start` — у вас будет своё имя сервиса;
-
-и под рутом зарелоадить NGINX:
-
-* `/etc/init.d/nginx reload`
+После команды `chef-solo` и краткого ожидания остаётся только задеплоить приложение.
 
 :satisfied:
 
