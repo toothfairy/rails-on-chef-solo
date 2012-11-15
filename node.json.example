@@ -1,7 +1,9 @@
 {
-  "set_fqdn": "app.ru",
+  "set_fqdn": "sloboda.dk",
 
-  "users": ["app"],
+  "users": [
+    "sloboda"
+  ],
 
   "nginx": {
     "version"                       : "1.2.4",
@@ -33,28 +35,24 @@
 
   "apps": [
     {
-      "name": "app",
-      "user": "app",
-      "server_name": "app.ru"
+      "user": "sloboda",
+      "root": "/home/sloboda/sloboda",
+      "server_name": "sloboda.dk",
+      "rewrite_from": "www.sloboda.dk",
+      "service": "unicorn-sloboda"
     }
   ],
 
-  "unicorn": {
-    "installs": [
-      {
-        "app_root" :  "/home/app/app",
-        "service"  :  "unicorn-app",
-        "user"     :  "app",
-        "group"    :  "www-data"
-      }
-    ],
-    "config": {
-      "generate": false
-    }
-  },
-
   "mysql": {
-    "server_root_password": "sacredroot"
+    "server_root_password": "sacredroot",
+
+    "databases": [
+      {
+        "database": "sloboda",
+        "username": "sloboda",
+        "password": "sacredpassword"
+      }
+    ]
   },
 
   "recipes": [
@@ -62,9 +60,10 @@
     "locale",
     "user::data_bag",
     "nginx::source",
-    "rails",
-    "unicorn",
     "mysql::server",
+    "database::mysql",
+    "mysqldatabases",
+    "rails",
     "imagemagick"
   ]
 }
