@@ -30,3 +30,89 @@ git clone git://github.com/macovsky/rails-on-chef-solo.git /etc/chef
 cd /etc/chef
 librarian-chef install
 ```
+
+Теперь надо сконфигурировать ноду, скопируем файл с примером:
+
+`cp node.json.example node.json`
+
+и откроем (на всякий случай напомню, что в `json` не бывает комментов):
+
+```javascript
+{
+  // hostname
+  "set_fqdn": "sloboda.dk",
+
+  // каких пользователей надо создать
+  // https://github.com/fnichol/chef-user
+  // нужно создать одноимённые databags, например databags/users/sloboda.json
+  "users": [
+    "sloboda"
+  ],
+
+  // http://community.opscode.com/cookbooks/nginx
+  "nginx": {
+    "version"                       : "1.2.4",
+    "worker_processes"              : 2,
+    "worker_connections"            : 1024,
+    "user"                          : "www-data",
+    "server_names_hash_bucket_size" : 64,
+    "keepalive_timeout"             : 30,
+    "default_site_enabled"          : false,
+
+    "modules": [
+      "http_stub_status_module",
+      "http_ssl_module",
+      "http_gzip_static_module"
+    ],
+
+    "gzip_types": [
+      "text/plain",
+      "text/html",
+      "text/css",
+      "text/xml",
+      "text/javascript",
+      "application/json",
+      "application/x-javascript",
+      "application/xml",
+      "application/xml+rss"
+    ]
+  },
+
+  "apps": [
+    {
+      "user": "sloboda",
+      "root": "/home/sloboda/sloboda",
+      "server_name": "sloboda.dk",
+      "rewrite_from": "www.sloboda.dk",
+      "service": "unicorn-sloboda"
+    }
+  ],
+
+  "mysql": {
+    "server_root_password": "sacredroot",
+
+	// какие базы данных создать
+    // http://github.com/macovsky/chef-mysqldatabases
+    "databases": [
+      {
+        "database": "sloboda",
+        "username": "sloboda",
+        "password": "sacredpassword"
+      }
+    ]
+  },
+
+  // общий список запускаемых рецептов
+  "recipes": [
+    "hostname",
+    "locale",
+    "user::data_bag",
+    "nginx::source",
+    "mysql::server",
+    "database::mysql",
+    "mysqldatabases",
+    "rails",
+    "imagemagick"
+  ]
+}
+```
