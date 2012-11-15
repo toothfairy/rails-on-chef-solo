@@ -2,7 +2,7 @@
 
 * Установка [hostname](http://community.opscode.com/cookbooks/hostname)
 * Установка дефолтной [locale](http://community.opscode.com/cookbooks/locale) `en_US.utf8` 
-* Создание [пользователей](https://github.com/fnichol/chef-user), указанные ключи добавляются в `~/.ssh/authorized_keys`, для пользователя генерируется DSA-ключ
+* Создание [пользователей](https://github.com/fnichol/chef-user), указанные ключи добавляются в `~/.ssh/authorized_keys`, для пользователя генерируется ключ
 * Установка [NGINX](http://community.opscode.com/cookbooks/nginx) из сорцов и дефолтная настройка
 * Настройка [Rails](http://github.com/macovsky/chef-rails)-приложений: конфиг для NGINX и индивидуальный `/etc/init.d` скрипт для управления [Unicorn](http://unicorn.bogomips.org/)
 * Установка [MySQL](http://community.opscode.com/cookbooks/mysql) из пакета, установка пароля для `root` и создание [баз](http://github.com/macovsky/chef-rails)
