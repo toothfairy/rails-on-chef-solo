@@ -1,12 +1,12 @@
-Коробка для подъёма [Rails](http://rubyonrails.org)-приложений на [Debian Squeeze](http://wiki.debian.org/DebianSqueeze) через [chef-solo](http://wiki.opscode.com/display/chef/Chef+Solo):
+Коробка для подъёма [Rails](http://rubyonrails.org)-приложений на [Debian Squeeze](http://wiki.debian.org/DebianSqueeze) через [Chef Solo](http://wiki.opscode.com/display/chef/Chef+Solo):
 
 * Установка [hostname](http://community.opscode.com/cookbooks/hostname)
-* Установка дефолтной [locale](http://community.opscode.com/cookbooks/locale)
+* Установка дефолтной [locale](http://community.opscode.com/cookbooks/locale) в 
 * Создание [пользователей](https://github.com/fnichol/chef-user) приложений
 * Установка [NGINX](http://community.opscode.com/cookbooks/nginx) из сорцов и дефолтная настройка
 * Настройка [Rails](http://github.com/macovsky/chef-rails)-приложения: конфиг для NGINX и индивидуальный `/etc/init.d` скрипт для управления [Unicorn](http://unicorn.bogomips.org/)
-* Установка [mysql](http://community.opscode.com/cookbooks/mysql) из пакета, установка пароля для `root` и создание [баз](http://github.com/macovsky/chef-rails)
-* Установка [imagemagick](http://community.opscode.com/cookbooks/imagemagick) из пакета
+* Установка [MySQL](http://community.opscode.com/cookbooks/mysql) из пакета, установка пароля для `root` и создание [баз](http://github.com/macovsky/chef-rails)
+* Установка [ImageMagick](http://community.opscode.com/cookbooks/imagemagick) из пакета
 
 **Установка, под рутом**
 
@@ -31,11 +31,13 @@ cd /etc/chef
 librarian-chef install
 ```
 
+**Настройка**
+
 Теперь надо сконфигурировать ноду, скопируем файл с примером:
 
 `cp node.json.example node.json`
 
-и откроем (на всякий случай напомню, что в `json` не бывает комментов):
+и откроем `node.json` (на всякий случай напомню, что в `json` не бывает комментов :-1:):
 
 ```javascript
 {
@@ -78,6 +80,8 @@ librarian-chef install
     ]
   },
 
+  // Rails-приложения
+  // https://github.com/macovsky/chef-rails
   "apps": [
     {
       "user": "sloboda",
@@ -116,3 +120,22 @@ librarian-chef install
   ]
 }
 ```
+
+**Запуск**
+
+```bash
+chef-solo
+```
+
+После этого остаётся только залогиниться пользователем приложения:
+
+* склонить приложение;
+* создать папки `mkdir -p log tmp/pids tmp/sockets`;
+* настроить `config/database.yml` и `config/unicorn.rb`;
+* запустить Unicorn `sudo /etc/init.d/unicorn-... start` — у вас будет своё имя сервиса;
+
+и под рутом зарелоадить NGINX:
+
+* `/etc/init.d/nginx reload`
+
+Протестировано на Debian Squeeze 64.
