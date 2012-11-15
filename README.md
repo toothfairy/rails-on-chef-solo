@@ -126,6 +126,8 @@ librarian-chef install
 
 После команды `chef-solo` и краткого ожидания остаётся только задеплоить приложение.
 
+Смотрите особенности настройки приложений в рецепте [chef-rails](https://github.com/macovsky/chef-rails).
+
 :satisfied:
 
 Протестировано на Debian Squeeze 64.
