@@ -85,7 +85,7 @@ librarian-chef install
   // hostname
   "set_fqdn": "sloboda.dk",
 
-  // каких пользователей надо создать
+  // пользователи
   // https://github.com/fnichol/chef-user
   // нужно создать одноимённые databags, например databags/users/sloboda.json
   // смотрите databags/users/sloboda.json.example
