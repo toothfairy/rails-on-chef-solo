@@ -3,5 +3,4 @@ tmp
 ohai_plugins
 Vagrantfile
 .vagrant
-node.json
-databags/users/app.json
+*.json
