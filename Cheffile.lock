@@ -34,9 +34,9 @@ SITE
 GIT
   remote: https://github.com/macovsky/chef-mysqldatabases
   ref: master
-  sha: 0b5f423fbbf9d9a9dccf14f47367e723eaee7258
+  sha: 0b724dfeae74046afc87e801b91dbb3f61c49917
   specs:
-    mysqldatabases (0.1.0)
+    mysqldatabases (0.2.0)
       database (>= 0.0.0)
 
 GIT
