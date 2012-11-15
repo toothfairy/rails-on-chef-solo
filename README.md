@@ -138,4 +138,6 @@ chef-solo
 
 * `/etc/init.d/nginx reload`
 
+:satisfied:
+
 Протестировано на Debian Squeeze 64.
