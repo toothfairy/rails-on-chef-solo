@@ -1,4 +1,4 @@
-Коробка для подъёма [Rails](http://rubyonrails.org)-приложений на [Debian Squeeze](http://wiki.debian.org/DebianSqueeze) через [Chef Solo](http://wiki.opscode.com/display/chef/Chef+Solo):
+Коробка для подъёма [Rails](http://rubyonrails.org)-приложений на [Debian Squeeze](http://wiki.debian.org/DebianSqueeze) через [Chef Solo](http://wiki.opscode.com/display/chef/Chef+Solo)
 
 * Установка [hostname](http://community.opscode.com/cookbooks/hostname)
 * Установка дефолтной [locale](http://community.opscode.com/cookbooks/locale) `en_US.utf8` 
