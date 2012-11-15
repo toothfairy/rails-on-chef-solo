@@ -3,14 +3,14 @@
 * Установка [hostname](http://community.opscode.com/cookbooks/hostname)
 * Установка дефолтной [locale](http://community.opscode.com/cookbooks/locale) `en_US.utf8` 
 * Создание [пользователей](https://github.com/fnichol/chef-user), указанные ключи добавляются в `~/.ssh/authorized_keys`, для пользователя генерируется ключ
-* Установка [NGINX](http://community.opscode.com/cookbooks/nginx) из сорцов и дефолтная настройка
-* Настройка [Rails](http://github.com/macovsky/chef-rails)-приложений: конфиг для NGINX и индивидуальный `/etc/init.d` скрипт для управления [Unicorn](http://unicorn.bogomips.org/)
+* Сборка последней стабильной версии [NGINX](http://community.opscode.com/cookbooks/nginx) из сорцов и дефолтная настройка
+* Настройка [Rails](http://github.com/macovsky/chef-rails)-приложений: конфиг для NGINX и индивидуальный сервис для управления [Unicorn](http://unicorn.bogomips.org/)
 * Установка [MySQL](http://community.opscode.com/cookbooks/mysql) из пакета, установка пароля для `root` и создание [баз](http://github.com/macovsky/chef-rails)
 * Установка [ImageMagick](http://community.opscode.com/cookbooks/imagemagick) из пакета
 
 **Установка, под рутом**
 
-Первый делом поставим [rbenv](http://github.com/sstephenson/rbenv) и Ruby 1.9.3 с помощью [замечательного скрипта](https://gist.github.com/4076121):
+Свежую систему первым делом проапдейтим и на неё поставим [rbenv](http://github.com/sstephenson/rbenv) и Ruby 1.9.3 с помощью [замечательного скрипта](https://gist.github.com/4076121) или уанлайнером:
 
 ```bash
 sh -c "`curl -L http://bit.ly/rbenv-ruby-193-on-debian-squeeze`"
@@ -47,6 +47,7 @@ librarian-chef install
   // каких пользователей надо создать
   // https://github.com/fnichol/chef-user
   // нужно создать одноимённые databags, например databags/users/sloboda.json
+  // смотрите databags/users/sloboda.json.example
   "users": [
     "sloboda"
   ],
@@ -80,8 +81,8 @@ librarian-chef install
     ]
   },
 
-  // Rails-приложения
-  // https://github.com/macovsky/chef-rails
+  // настройки Rails-приложений
+  // смотрите подробно: https://github.com/macovsky/chef-rails
   "apps": [
     {
       "user": "sloboda",
