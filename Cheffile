@@ -12,3 +12,4 @@ cookbook 'mysql'
 cookbook 'database'
 cookbook 'mysqldatabases', :git => "https://github.com/macovsky/chef-mysqldatabases"
 cookbook 'imagemagick'
+cookbook 'openssh'

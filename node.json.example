@@ -55,6 +55,18 @@
     ]
   },
 
+  "openssh": {
+    "server": {
+      "port": "22",
+      "protocol": "2",
+      "use_privilege_separation": "yes",
+      "ignore_rhosts": "yes",
+      "permit_root_login": "no",
+      "password_authentication": "no",
+      "permit_empty_passwords": "no"
+    }
+  },
+
   "recipes": [
     "hostname",
     "locale",
@@ -64,6 +76,7 @@
     "database::mysql",
     "mysqldatabases",
     "rails",
-    "imagemagick"
+    "imagemagick",
+    "openssh"
   ]
 }
