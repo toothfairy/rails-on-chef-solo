@@ -7,10 +7,11 @@
 * Настройка [Rails](http://github.com/macovsky/chef-rails)-приложений: конфиг для NGINX и индивидуальный сервис для управления [Unicorn](http://unicorn.bogomips.org/)
 * Установка [MySQL](http://community.opscode.com/cookbooks/mysql) из пакета, установка пароля для `root` и создание [баз](http://github.com/macovsky/chef-rails)
 * Установка [ImageMagick](http://community.opscode.com/cookbooks/imagemagick) из пакета
+* Настройка [OpenSSH](https://github.com/opscode-cookbooks/openssh)
 
 **Установка, под рутом**
 
-Обновим свежую систему, установим dev-пакеты и поставим [rbenv](http://github.com/sstephenson/rbenv) и Ruby 1.9.3:
+Чистую систему обновим, установим dev-пакеты и поставим [rbenv](http://github.com/sstephenson/rbenv) и Ruby 1.9.3:
 
 ```bash
 # Update, upgrade and install development tools:
@@ -56,7 +57,7 @@ gem: --no-ri --no-rdoc
 EOF
 ```
 
-Потом уже [chef](http://www.opscode.com/chef/) + [ruby-shadow](https://github.com/apalmblad/ruby-shadow), [librarian](https://github.com/applicationsonline/librarian) для менеджмента cookbooks и [bundler](http://gembundler.com) на будущее:
+Потом поставим [chef](http://www.opscode.com/chef/) + [ruby-shadow](https://github.com/apalmblad/ruby-shadow), [librarian](https://github.com/applicationsonline/librarian) для менеджмента cookbooks и [bundler](http://gembundler.com) на будущее:
 
 ```bash
 gem i chef ruby-shadow librarian bundler
@@ -71,7 +72,7 @@ cd /etc/chef
 librarian-chef install
 ```
 
-**Настройка**
+**Конфигурация**
 
 Теперь надо сконфигурировать ноду, скопируем файл с примером:
 
@@ -86,7 +87,7 @@ librarian-chef install
 
   // пользователи
   // https://github.com/fnichol/chef-user
-  // нужно создать одноимённые databags, например databags/users/sloboda.json
+  // нужно создать одноимённые databags, в данном случае databags/users/sloboda.json
   // смотрите databags/users/sloboda.json.example
   "users": [
     "sloboda"
@@ -122,7 +123,7 @@ librarian-chef install
   },
 
   // настройки Rails-приложений
-  // смотрите подробно: https://github.com/macovsky/chef-rails
+  // https://github.com/macovsky/chef-rails
   "apps": [
     {
       "user": "sloboda",
@@ -146,6 +147,22 @@ librarian-chef install
       }
     ]
   },
+  
+  // https://github.com/opscode-cookbooks/openssh
+  "openssh": {
+    "server": {
+      // из соображений безопасности полезно поменять дефолтный 22-й порт
+      "port": "22",
+      "protocol": "2",
+      "use_privilege_separation": "yes",
+      "ignore_rhosts": "yes",
+      "permit_root_login": "no",
+      // поменять на yes, если хотите заходить под паролями
+      "password_authentication": "no",
+      "permit_empty_passwords": "no"
+    }
+  },
+
 
   // общий список запускаемых рецептов
   "recipes": [
@@ -157,12 +174,13 @@ librarian-chef install
     "database::mysql",
     "mysqldatabases",
     "rails",
-    "imagemagick"
+    "imagemagick",
+    "openssh"
   ]
 }
 ```
 
-**Запуск**
+**Установка**
 
 После команды `chef-solo` и краткого ожидания остаётся только задеплоить приложение.
 
@@ -170,4 +188,4 @@ librarian-chef install
 
 :satisfied:
 
-Протестировано на Debian Squeeze 64.
+Протестировано на [Debian Squeeze 64](http://wiki.debian.org/DebianSqueeze).
