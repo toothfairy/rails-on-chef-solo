@@ -7,11 +7,11 @@
 
   "nginx": {
     "version"                       : "1.2.4",
-    "worker_processes"              : 2,
+    "worker_processes"              : 1,
     "worker_connections"            : 1024,
     "user"                          : "www-data",
-    "server_names_hash_bucket_size" : "64",
-    "keepalive_timeout"             : "30",
+    "server_names_hash_bucket_size" : 64,
+    "keepalive_timeout"             : 30,
     "default_site_enabled"          : false,
 
     "modules": [
@@ -57,8 +57,8 @@
 
   "openssh": {
     "server": {
-      "port": "22",
-      "protocol": "2",
+      "port": 22,
+      "protocol": 2,
       "use_privilege_separation": "yes",
       "ignore_rhosts": "yes",
       "permit_root_login": "no",
