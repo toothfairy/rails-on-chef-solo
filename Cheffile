@@ -7,7 +7,7 @@ cookbook 'hostname'
 cookbook 'locale'
 cookbook 'user'
 cookbook 'nginx'
-cookbook 'rails', "0.4.0", :git => "https://github.com/macovsky/chef-rails"
+cookbook 'rails', :git => "https://github.com/macovsky/chef-rails"
 cookbook 'mysql'
 cookbook 'database'
 cookbook 'mysqldatabases', :git => "https://github.com/macovsky/chef-mysqldatabases"

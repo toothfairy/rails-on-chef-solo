@@ -43,7 +43,7 @@ GIT
 GIT
   remote: https://github.com/macovsky/chef-rails
   ref: master
-  sha: b4e3995a68d4385050f7848ddf4e538e9dd1130c
+  sha: ca21ea67996fd98c03202751b4f260fede002e6c
   specs:
     rails (0.4.0)
       nginx (>= 0.0.0)
@@ -58,6 +58,6 @@ DEPENDENCIES
   mysqldatabases (>= 0)
   nginx (>= 0)
   openssh (>= 0)
-  rails (= 0.4.0)
+  rails (>= 0)
   user (>= 0)
 
