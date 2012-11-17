@@ -43,7 +43,7 @@ GIT
 GIT
   remote: https://github.com/macovsky/chef-rails
   ref: master
-  sha: ca21ea67996fd98c03202751b4f260fede002e6c
+  sha: d52e37c6e86a655d9953e84346e4f5a8690e4186
   specs:
     rails (0.4.0)
       nginx (>= 0.0.0)
