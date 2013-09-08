@@ -3,7 +3,7 @@
 
 site 'http://community.opscode.com/api/v1'
 
-cookbook 'hostname'
+cookbook 'lxmx_hostname'
 cookbook 'locale'
 cookbook 'user'
 cookbook 'nginx'

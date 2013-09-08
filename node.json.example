@@ -1,5 +1,7 @@
 {
-  "set_fqdn": "sloboda.dk",
+  "net": {
+    "hostname": "sloboda.dk"
+  },
 
   "users": [
     "sloboda"
@@ -44,7 +46,9 @@
   ],
 
   "mysql": {
-    "server_root_password": "sacredroot",
+    "server_root_password": "iloverandompasswordsbutthiswilldo",
+    "server_repl_password": "iloverandompasswordsbutthiswilldo",
+    "server_debian_password": "iloverandompasswordsbutthiswilldo",
 
     "databases": [
       {
@@ -67,16 +71,17 @@
     }
   },
 
-  "recipes": [
-    "hostname",
-    "locale",
-    "user::data_bag",
-    "nginx::source",
-    "mysql::server",
-    "database::mysql",
-    "mysqldatabases",
-    "rails",
-    "imagemagick",
-    "openssh"
+  "run_list": [
+    "recipe[lxmx_hostname]",
+    "recipe[locale]",
+    "recipe[user::data_bag]",
+    "recipe[nginx::source]",
+    "recipe[mysql::client]",
+    "recipe[mysql::server]",
+    "recipe[database::mysql]",
+    "recipe[mysqldatabases]",
+    "recipe[rails]",
+    "recipe[imagemagick]",
+    "recipe[openssh]"
   ]
 }
