@@ -11,7 +11,7 @@
 
 **Установка, под рутом**
 
-Чистую систему обновим, установим dev-пакеты и поставим [rbenv](http://github.com/sstephenson/rbenv) и Ruby 1.9.3:
+Чистую систему обновим, установим dev-пакеты и поставим [rbenv](http://github.com/sstephenson/rbenv) и Ruby 2.0:
 
 ```bash
 apt-get update
