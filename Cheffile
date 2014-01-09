@@ -3,13 +3,14 @@
 
 site 'http://community.opscode.com/api/v1'
 
+cookbook 'git'
 cookbook 'lxmx_hostname'
 cookbook 'locale'
 cookbook 'user'
 cookbook 'nginx'
-cookbook 'rails', :git => "https://github.com/macovsky/chef-rails"
 cookbook 'mysql'
 cookbook 'database'
 cookbook 'mysqldatabases', :git => "https://github.com/macovsky/chef-mysqldatabases"
 cookbook 'imagemagick'
 cookbook 'openssh'
+cookbook 'php', :git => 'git://github.com/opscode-cookbooks/php'

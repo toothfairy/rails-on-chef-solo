@@ -4,7 +4,7 @@
   },
 
   "users": [
-    "sloboda"
+    "deployer"
   ],
 
   "nginx": {
@@ -35,43 +35,18 @@
     ]
   },
 
-  "apps": [
-    {
-      "user": "sloboda",
-      "root": "/home/sloboda/sloboda",
-      "server_name": "sloboda.dk",
-      "rewrite_from": "www.sloboda.dk",
-      "service": "unicorn-sloboda"
-    }
-  ],
-
   "mysql": {
-    "server_root_password": "iloverandompasswordsbutthiswilldo",
-    "server_repl_password": "iloverandompasswordsbutthiswilldo",
-    "server_debian_password": "iloverandompasswordsbutthiswilldo",
+    "server_root_password": "password",
+    "server_repl_password": "password",
 
     "databases": [
       {
-        "database": "sloboda",
-        "username": "sloboda",
-        "password": "sacredpassword"
       }
     ]
   },
 
-  "openssh": {
-    "server": {
-      "port": 22,
-      "protocol": 2,
-      "use_privilege_separation": "yes",
-      "ignore_rhosts": "yes",
-      "permit_root_login": "no",
-      "password_authentication": "no",
-      "permit_empty_passwords": "no"
-    }
-  },
-
   "run_list": [
+    "recipe[git]",
     "recipe[lxmx_hostname]",
     "recipe[locale]",
     "recipe[user::data_bag]",
@@ -83,5 +58,11 @@
     "recipe[rails]",
     "recipe[imagemagick]",
     "recipe[openssh]"
-  ]
+    "recipe[php]"
+  ],
+
+  "php": {
+    "install_method": "source",
+    "php54": true
+  }
 }

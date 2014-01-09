@@ -1,7 +1,0 @@
-{
-  "id": "sloboda",
-  "groups": ["www-data"],
-  "comment": "App user",
-  "password": "$1$8SGSz.ap$7MpAdi321te4BDGnj31dM/",
-  "ssh_keys": ["ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEApBqLigr9W9FKLJ/88sieSxGrotSVaq02J9mk13MHi6i3ocGNr0gwrr3Js7gGQb9wMTLKd+jsW8iP4ACI1GRStOwOzqiPgKTfXnK2lRNuc4soXz8TO9Zqehd00rSdGD35fHBJlDkmvDCA7DKjm2hXws3F+tDc3HtngYU5J+aTW5KgoPpei31B6BC3PJLN0nA2zLZnQqVU3Z6QFHdRSIh4iqo/R6qymKrkEP7pkICC8bgIO+JRrf6bYPkuo3pkMg3VhLk6nHG/aPRsm9CBsx7XbyN7Z2UI4CZliIQuBSxPpuCWsAG9JqYk3t5Q+SNhQx8Bp+VYHxJp3P+EICS1LCyKHQ=="]
-}

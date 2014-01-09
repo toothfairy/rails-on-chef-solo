@@ -1,0 +1,7 @@
+{
+  "id": "deployer",
+  "groups": ["deployer"],
+  "comment": "App user",
+  "password": "",
+  "ssh_keys": ["ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC0abJ/jGsBJWRAsYylcQ2NYDaB4YxN5hnYQDMAGJyRo+kSrP21BChk/fs/vDt9do18Pgy9bxVS+AjEgaq7HlsEqPXMAHk8TfEf3FUmK/1qql1x6vyMHnpa4h+EPMRqcOhhpcd1Vi6Zb820s4YJugayR31l9VWKFhbc+7NnzLowawOFZDGFeLWwAEnCIS9jRR3PoPnNqZ/DfLxPwCynjdxpYPsW1/eYAZuF0XOH3Ri7fSxRLS2HOYXVUP4QyrqiPnOb8UrKqkzd2HmsZTt1V7OHkQflq5qW18KIc1OoLtzzae7n47MMYTLbKB3FW016xd1DLUy4IQ/nNo9bbhpVhMoZ sergeev.peter@gmail.com"]
+}
