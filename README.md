@@ -16,7 +16,7 @@
 ```bash
 apt-get update
 apt-get -y upgrade
-apt-get -y install git-core libssl-dev
+apt-get -y install git-core libssl-dev build-essential
 
 # Install rbenv
 git clone git://github.com/sstephenson/rbenv.git /usr/local/rbenv
