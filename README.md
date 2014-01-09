@@ -57,7 +57,7 @@ rbenv rehash
 ```bash
 git clone git://github.com/toothfairy/rails-on-chef-solo.git /etc/chef
 cd /etc/chef
-librarian-chef install
+librarian-chef install --clean --verbose
 ```
 
 **Конфигурация**
