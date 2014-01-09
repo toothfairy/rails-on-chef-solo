@@ -13,4 +13,5 @@ cookbook 'database'
 cookbook 'mysqldatabases', :git => "https://github.com/macovsky/chef-mysqldatabases"
 cookbook 'imagemagick'
 cookbook 'openssh'
-cookbook 'php', :git => 'git://github.com/opscode-cookbooks/php'
+cookbook 'jolicaode-php', :git => 'https://github.com/jolicode/chef-cookbook-php.git'
+cookbook 'python-software-properties', :git => 'https://github.com/nisaacson/chef-python-software-properties' 
