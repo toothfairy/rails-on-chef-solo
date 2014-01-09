@@ -55,7 +55,7 @@ rbenv rehash
 Скачиваем коробку и устанавливаем cookbooks из `Cheffile`:
 
 ```bash
-git clone git://github.com/macovsky/rails-on-chef-solo.git /etc/chef
+git clone git://github.com/toothfairy/rails-on-chef-solo.git /etc/chef
 cd /etc/chef
 librarian-chef install
 ```
@@ -70,17 +70,12 @@ librarian-chef install
 
 ```javascript
 {
-  // hostname
-  "net": {
-    "hostname": "sloboda.dk"
-  },
-
   // пользователи
   // https://github.com/fnichol/chef-user
   // нужно создать одноимённые databags, в данном случае databags/users/sloboda.json
   // смотрите databags/users/sloboda.json.example
   "users": [
-    "sloboda"
+    "deployer"
   ],
 
   // http://community.opscode.com/cookbooks/nginx
