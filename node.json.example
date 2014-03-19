@@ -3,6 +3,10 @@
     "deployer"
   ],
 
+  "system_packages": {
+    "packages": "libxslt-dev libxml2-dev libmagickwand-dev"
+  },
+
   "nginx": {
     "version"                       : "1.2.4",
     "worker_processes"              : 1,
@@ -65,6 +69,7 @@
 
   "run_list": [
     "recipe[git]",
+    "recipe[system_packages]",
     "recipe[lxmx_hostname]",
     "recipe[locale]",
     "recipe[user::data_bag]",

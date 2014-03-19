@@ -4,6 +4,7 @@
 site 'http://community.opscode.com/api/v1'
 
 cookbook 'git'
+cookbook 'system_packages', :git => "https://github.com/coroutine/chef-system_packages"
 cookbook 'lxmx_hostname'
 cookbook 'locale'
 cookbook 'user'
