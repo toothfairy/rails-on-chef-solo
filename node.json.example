@@ -32,14 +32,35 @@
   },
 
   "mysql": {
+    "bind_address": "localhost",
     "server_root_password": "password",
     "server_repl_password": "password",
-    "server_debian_password": "password",
+    "server_debian_password": "password"
+  },
 
-    "databases": [
-      {
-      }
-    ]
+  "postgresql": {
+    "version": "9.3",
+    "password": {
+      "postgres": "password"
+    },
+    "config": {
+      "ssl": "off"
+    }
+  },
+
+  "jolicode-php": {
+    "ext-fpm": {
+      "listen": "127.0.0.1:9000"
+    }
+  },
+
+  "newrelic": {
+    "server_monitoring": {
+      "license": "your-key"
+    },
+    "application_monitoring": {
+      "license": "your-key"
+    }
   },
 
   "run_list": [
@@ -53,12 +74,26 @@
     "recipe[database::mysql]",
     "recipe[mysqldatabases]",
     "recipe[imagemagick]",
-    "recipe[openssh]"
-    "recipe[php]"
-  ],
-
-  "php": {
-    "install_method": "source",
-    "php54": true
-  }
+    "recipe[openssh]",
+    "recipe[jolicode-php]",
+    "recipe[jolicode-php::composer]",
+    "recipe[jolicode-php::ext-apc]",
+    "recipe[jolicode-php::ext-curl]",
+    "recipe[jolicode-php::ext-fpm]",
+    "recipe[jolicode-php::ext-gd]",
+    "recipe[jolicode-php::ext-imagick]",
+    "recipe[jolicode-php::ext-intl]",
+    "recipe[jolicode-php::ext-mbstring]",
+    "recipe[jolicode-php::ext-mcrypt]",
+    "recipe[jolicode-php::ext-mysql]",
+    "recipe[jolicode-php::ext-pdo]",
+    "recipe[jolicode-php::ext-twig]",
+    "recipe[postgresql::client]",
+    "recipe[postgresql::server]",
+    "recipe[postgresql::ruby]",
+    "recipe[newrelic]",
+    "recipe[wkhtmltopdf]",
+    "recipe[wkhtmltopdf::wkhtmltoimage_binary]",
+    "recipe[wkhtmltopdf::wkhtmltopdf_binary]"
+  ]
 }

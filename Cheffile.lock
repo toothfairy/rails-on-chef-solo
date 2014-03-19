@@ -4,11 +4,19 @@ SITE
     apt (2.1.1)
     aws (0.101.4)
     build-essential (1.4.2)
+    chef_handler (1.1.4)
     database (1.4.0)
       aws (>= 0.0.0)
       mysql (>= 1.3.0)
       postgresql (>= 1.0.0)
       xfs (>= 0.0.0)
+    dmg (2.1.2)
+    git (2.8.4)
+      build-essential (>= 0.0.0)
+      dmg (>= 0.0.0)
+      runit (>= 1.0.0)
+      windows (>= 0.0.0)
+      yum (< 3.0.0)
     hostsfile (2.0.0)
     imagemagick (0.2.2)
     iptables (0.12.0)
@@ -18,6 +26,7 @@ SITE
     mysql (3.0.4)
       build-essential (> 1.1.0)
       openssl (>= 0.0.0)
+    newrelic (0.5.6)
     nginx (1.8.0)
       apt (>= 0.0.0)
       build-essential (>= 0.0.0)
@@ -28,17 +37,40 @@ SITE
     openssh (1.2.2)
       iptables (>= 0.0.0)
     openssl (1.1.0)
-    postgresql (3.0.4)
-      apt (>= 0.0.0)
-      build-essential (>= 0.0.0)
-      openssl (>= 0.0.0)
     runit (1.2.0)
       build-essential (>= 0.0.0)
       yum (>= 0.0.0)
-    sudo (2.2.0)
     user (0.3.0)
+    windows (1.12.6)
+      chef_handler (>= 0.0.0)
     xfs (1.1.0)
     yum (2.3.2)
+
+GIT
+  remote: https://github.com/bflad/chef-wkhtmltopdf
+  ref: master
+  sha: 9b7f3405f8dc13c17aa52aa11b7642caef01e09e
+  specs:
+    wkhtmltopdf (0.1.0)
+
+GIT
+  remote: https://github.com/hw-cookbooks/postgresql
+  ref: master
+  sha: 5800238828b443725442fe510ec4f5308ed9ce8b
+  specs:
+    postgresql (3.3.4)
+      apt (>= 0.0.0)
+      build-essential (>= 0.0.0)
+      openssl (>= 0.0.0)
+
+GIT
+  remote: https://github.com/jolicode/chef-cookbook-php.git
+  ref: master
+  sha: f7ee5e5bcf44a43a8d1d939511bebbe00a8033cb
+  specs:
+    jolicode-php (1.1.0)
+      build-essential (>= 0.0.0)
+      yum (>= 0.0.0)
 
 GIT
   remote: https://github.com/macovsky/chef-mysqldatabases
@@ -48,24 +80,18 @@ GIT
     mysqldatabases (0.2.0)
       database (>= 0.0.0)
 
-GIT
-  remote: https://github.com/macovsky/chef-rails
-  ref: master
-  sha: 840d67ace8395ccc918a5c50e82c6d6dd134c2ec
-  specs:
-    rails (0.4.0)
-      nginx (>= 0.0.0)
-      sudo (>= 0.0.0)
-
 DEPENDENCIES
   database (>= 0)
+  git (>= 0)
   imagemagick (>= 0)
+  jolicode-php (>= 0)
   locale (>= 0)
   lxmx_hostname (>= 0)
   mysql (>= 0)
   mysqldatabases (>= 0)
+  newrelic (>= 0)
   nginx (>= 0)
   openssh (>= 0)
-  rails (>= 0)
+  postgresql (>= 0)
   user (>= 0)
-
+  wkhtmltopdf (>= 0)
