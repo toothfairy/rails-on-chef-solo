@@ -4,6 +4,7 @@
 site 'http://community.opscode.com/api/v1'
 
 cookbook 'git'
+cookbook 'python-software-properties', :git => "https://github.com/nisaacson/chef-python-software-properties"
 cookbook 'system_packages', :git => "https://github.com/coroutine/chef-system_packages"
 cookbook 'lxmx_hostname'
 cookbook 'locale'
@@ -18,3 +19,4 @@ cookbook 'jolicode-php', :git => 'https://github.com/jolicode/chef-cookbook-php.
 cookbook 'postgresql', :git => 'https://github.com/hw-cookbooks/postgresql'
 cookbook 'newrelic'
 cookbook "wkhtmltopdf", :git => 'https://github.com/bflad/chef-wkhtmltopdf'
+cookbook "postfix"

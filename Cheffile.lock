@@ -37,6 +37,7 @@ SITE
     openssh (1.2.2)
       iptables (>= 0.0.0)
     openssl (1.1.0)
+    postfix (3.1.8)
     runit (1.2.0)
       build-essential (>= 0.0.0)
       yum (>= 0.0.0)
@@ -52,6 +53,13 @@ GIT
   sha: 9b7f3405f8dc13c17aa52aa11b7642caef01e09e
   specs:
     wkhtmltopdf (0.1.0)
+
+GIT
+  remote: https://github.com/coroutine/chef-system_packages
+  ref: master
+  sha: 01e6a4f605039e21bea20b73ec4deea14d80a9f7
+  specs:
+    system_packages (0.1.1)
 
 GIT
   remote: https://github.com/hw-cookbooks/postgresql
@@ -92,6 +100,8 @@ DEPENDENCIES
   newrelic (>= 0)
   nginx (>= 0)
   openssh (>= 0)
+  postfix (>= 0)
   postgresql (>= 0)
+  system_packages (>= 0)
   user (>= 0)
   wkhtmltopdf (>= 0)

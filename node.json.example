@@ -53,6 +53,12 @@
   },
 
   "jolicode-php": {
+    "fpm": {
+      "php-config": {
+        "upload_max_filesize": "128M",
+        "post_max_size": "128M"
+      }
+    },
     "ext-fpm": {
       "listen": "127.0.0.1:9000"
     }
@@ -69,6 +75,7 @@
 
   "run_list": [
     "recipe[git]",
+    "recipe[python-software-properties::default]",
     "recipe[system_packages]",
     "recipe[lxmx_hostname]",
     "recipe[locale]",
@@ -99,6 +106,7 @@
     "recipe[newrelic]",
     "recipe[wkhtmltopdf]",
     "recipe[wkhtmltopdf::wkhtmltoimage_binary]",
-    "recipe[wkhtmltopdf::wkhtmltopdf_binary]"
+    "recipe[wkhtmltopdf::wkhtmltopdf_binary]",
+    "recipe[postfix]"
   ]
 }
