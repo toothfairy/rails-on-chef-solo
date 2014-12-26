@@ -48,7 +48,8 @@ EOF
 Потом поставим [chef](http://www.opscode.com/chef/) + [ruby-shadow](https://github.com/apalmblad/ruby-shadow), [librarian](https://github.com/applicationsonline/librarian-chef) для менеджмента cookbooks и [bundler](http://gembundler.com) на будущее:
 
 ```bash
-gem i chef ruby-shadow librarian-chef bundler
+gem i chef -v 11.16.4
+gem i ruby-shadow librarian-chef bundler
 rbenv rehash
 ```
 
